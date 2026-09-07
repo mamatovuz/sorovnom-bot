@@ -1,0 +1,24 @@
+# Sirlar va maxfiy ma'lumotlar — HECH QACHON push qilinmasin!
+.env
+*.db
+*.db.old
+*.sqlite
+*.sqlite3
+
+# Loglar
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

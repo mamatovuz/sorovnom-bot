@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: sorovnom-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false          # Render dashboard'da qo'lda kiritiladi
+      - key: ADMIN_IDS
+        sync: false          # Masalan: 7903688837
+      - key: DB_PATH
+        value: school.db
+      - key: PYTHON_VERSION
+        value: "3.12.5"
+
+    # ── DOIMIY BAZA (ixtiyoriy, PAID plan kerak) ──────────────
+    # Free plan'da baza redeploy/uyquda RESET bo'ladi.
+    # Ma'lumot doim saqlanishi uchun Starter (paid) plan + disk:
+    # 1) Yuqorida  plan: starter  qiling
+    # 2) DB_PATH value ni  /var/data/school.db  ga o'zgartiring
+    # 3) Quyidagi disk blokini oching:
+    #
+    # disk:
+    #   name: data
+    #   mountPath: /var/data
+    #   sizeGB: 1
